@@ -14,6 +14,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@Table(name = "Users")
 public class UserEntity {
 
     @Id
@@ -33,7 +34,7 @@ public class UserEntity {
     private LocalDateTime updatedAt;
 
     @Column(name = "is_enabled")
-    private boolean isEnabled;
+    private boolean isEnabled = true;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(

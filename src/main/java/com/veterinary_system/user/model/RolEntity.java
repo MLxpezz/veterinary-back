@@ -10,6 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
+@Table(name = "Roles")
 public class RolEntity {
 
     @Id

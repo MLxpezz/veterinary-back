@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 public enum ApiMessage{
 
     //SUCCESS MESSAGE
-    SUCCESSFULLY_AUTHENTICATION("Authentication is success correctly", HttpStatus.OK),
+    SUCCESSFULLY_AUTHENTICATION("Authentication successful", HttpStatus.OK),
 
 
     //ERROR MESSAGE
