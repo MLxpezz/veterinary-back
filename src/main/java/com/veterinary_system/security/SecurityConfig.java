@@ -31,11 +31,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
 
                 .authorizeHttpRequests(auth -> auth
-                        // Rutas públicas — no requieren token
                         .requestMatchers("/api/auth/**").permitAll()
-                        // Rutas que requieren rol específico
-                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        // Cualquier otra ruta requiere autenticación
+                        .requestMatchers("/api/admin/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers("/api/veterinary/**").hasRole("SUPER_ADMIN")
                         .anyRequest().authenticated()
                 )
 

@@ -37,13 +37,13 @@ public class VeterinaryEntity {
     @Column(nullable = false)
     private String whatsapp;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Column(name = "is_active", nullable = false)
+    @Column(name = "is_active")
     private boolean isActive;
 
     @Column(nullable = false)
@@ -60,6 +60,7 @@ public class VeterinaryEntity {
     @PrePersist
     private void prePersist() {
         createdAt = LocalDateTime.now();
+        isActive = true;
     }
 
     @PreUpdate

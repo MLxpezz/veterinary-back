@@ -7,8 +7,6 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Builder
-@ToString(exclude = {"roles"})
-@EqualsAndHashCode(exclude = "roles")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -36,7 +34,7 @@ public class UserEntity {
     @Column(name = "is_enabled")
     private boolean isEnabled = true;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
